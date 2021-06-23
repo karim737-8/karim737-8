@@ -1,0 +1,31 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+Widget defaultFormField ({
+  required String label,
+  required IconData prefix,
+  required TextEditingController controller,
+  IconData?  suffix,
+  bool obscure = false,
+  required TextInputType type,
+  required Function onTap,
+  required Function validate,
+}) => TextFormField(
+
+controller: controller,
+onTap: onTap(),
+validator: validate(),
+keyboardType:type,
+obscureText:obscure,
+decoration: InputDecoration(
+labelText: label,
+prefixIcon: Icon(
+  prefix,
+),
+suffixIcon: Icon(
+    suffix,
+),
+border: OutlineInputBorder(),
+),
+);
+
